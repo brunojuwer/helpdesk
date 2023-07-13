@@ -1,0 +1,12 @@
+.card {
+  width: 80%;
+  margin: 1rem auto;
+}
+
+img {
+  height: 20rem;
+}
+
+.card-content {
+  padding: 2rem;
+}

@@ -1,0 +1,41 @@
+.container {
+  height: calc(100vh - 64px);
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.sidenav {
+  max-width: 15rem;
+  width: 100%;
+  border: none;
+}
+
+.menu-item {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+}
+
+.link-name {
+  margin-top: 2px;
+}
+
+.menu {
+  position: fixed;
+  top: 7px;
+  left: 10px;
+  color: #c0baba;
+}
+
+.logout {
+  position: absolute;
+  bottom: 1px;
+}
+
+.logout-container:hover {
+  color: var(--warn-color);
+}

@@ -1,0 +1,16 @@
+@import 'ngx-toastr/toastr';
+
+
+:root{
+  --primary-color: #e91e63;
+  --accent-color: #607d8b;
+  --warn-color: #f44336;
+  --gray-300: #424242;
+}
+
+html, body { height: 100%; }
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+  background-color: #303030;
+}

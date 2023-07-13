@@ -1,0 +1,48 @@
+<mat-card>
+  <mat-card-content>
+    <div class="header">
+      <h2 class="login-title">Acessar Help Desk</h2>
+      <img src="../../../assets/img/login-image.svg" alt="imagem de login">
+    </div>
+
+    <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
+
+        <div class="code-input">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input [(ngModel)]="credentials.email" formControlName="email" matInput required>
+            <mat-error *ngIf="loginForm.get('email')?.errors?.['required']">
+              Required account email
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <span class="aLink">Forgot password?</span>
+          <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input 
+                  [(ngModel)]="credentials.senha" 
+                  formControlName="password" 
+                  matInput 
+                  [type]="hide ? 'password': 'text'" 
+                  required
+                >
+                <button 
+                  mat-icon-button
+                  matSuffix 
+                  (click)="hide = !hide"
+                  [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide"
+                > 
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error *ngIf="loginForm.get('password')?.errors?.['required']">
+                  Required Password
+                </mat-error>
+          </mat-form-field>
+        </div>
+        <button mat-flat-button color="primary" [disabled]="!validateFields()">Login</button>
+    </form>
+  </mat-card-content>
+</mat-card>

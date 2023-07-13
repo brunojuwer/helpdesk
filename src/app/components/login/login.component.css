@@ -1,0 +1,37 @@
+mat-card {
+  max-width: 600px;
+  margin: 2rem auto;
+  text-align: center;
+  max-height: 600px;
+}
+
+.login-title {
+  color: #fff;
+}
+
+.header img {
+  width: 15rem;
+  padding: 1rem;
+}
+
+.header {
+  text-align: center;
+}
+
+.full-width {
+  width: 80%;
+}
+
+.forgot-password {
+  padding-left: 0px;
+}
+
+.code-input {
+  padding-top: 10px;
+}
+
+.aLink {
+  float: right;
+  padding-right: 60px;
+  text-decoration: none;
+}

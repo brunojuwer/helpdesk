@@ -1,0 +1,46 @@
+<app-header />
+
+<button class="menu" mat-icon-button (click)="drawer.toggle()">
+  <mat-icon>menu</mat-icon>
+</button>
+<mat-drawer-container class="container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side" opened="true">
+   <mat-nav-list class="nav-list">
+    <a mat-list-item routerLink="/" >
+      <div class="menu-item">
+        <i class="material-icons">home</i>
+        <p class="link-name">Home</p>
+      </div>
+    </a>
+    <a mat-list-item routerLink="tecnicos" >
+      <div class="menu-item">
+        <i class="material-icons">account_circle</i>
+        <p class="link-name">Técnicos</p>
+      </div>
+    </a>
+    <a mat-list-item routerLink="/" >
+      <div class="menu-item">
+        <i class="material-icons">person</i>
+        <p class="link-name">Cliente</p>
+      </div>
+    </a>
+    <a mat-list-item routerLink="/" >
+      <div class="menu-item">
+        <i class="material-icons">code</i>
+        <p class="link-name">Github</p>
+      </div>
+    </a>
+    <a mat-list-item class="logout" (click)="logOut()">
+      <div class="menu-item logout-container">
+        <i class="material-icons">logout</i>
+        <p class="link-name">Sair</p>
+      </div>
+    </a>
+   </mat-nav-list>
+   
+  </mat-drawer>
+
+  <div class="sidenav-content">
+  </div>
+  <router-outlet></router-outlet>
+</mat-drawer-container>
