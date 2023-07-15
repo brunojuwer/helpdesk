@@ -1,5 +1,5 @@
 .container {
-  max-width: 1400px;
+  max-width: 1000px;
   width: 100%;
   margin: 2rem auto;
 }
@@ -12,4 +12,21 @@ h1 {
 .table-filter {
   margin-top: 1rem;
   width: 100%;
+}
+
+.edit {
+  color: var(--warn-color);
+  opacity: 0.8;
+}
+
+.edit:hover {
+  opacity: 10;
+}
+
+.delete {
+  color: rgba(255, 0, 0, 0.5)
+}
+
+.delete:hover {
+  color: rgba(255, 0, 0, 0.8)
 }

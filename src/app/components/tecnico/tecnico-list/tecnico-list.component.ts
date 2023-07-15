@@ -7,6 +7,8 @@ import { TecnicoService } from 'src/app/services/tecnico.service';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { Router, RouterModule } from '@angular/router';
+import { provideNgxMask, NgxMaskDirective, NgxMaskPipe } from 'ngx-mask'; 
+import { DataService } from 'src/app/services/data.service';
 
 
 @Component({
@@ -20,8 +22,11 @@ import { Router, RouterModule } from '@angular/router';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    RouterModule
+    RouterModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
   ],
+  providers: [provideNgxMask()]
 })
 export class TecnicoListComponent implements OnInit {
 
@@ -34,7 +39,11 @@ export class TecnicoListComponent implements OnInit {
   @ViewChild(MatPaginator)
   paginator: MatPaginator;
 
-  constructor(private service: TecnicoService, private router: Router) {}
+  constructor(
+    private service: TecnicoService, 
+    private router: Router,
+    private serviceData: DataService
+  ) {}
 
 
   applyFilter(event: Event) {
@@ -48,8 +57,15 @@ export class TecnicoListComponent implements OnInit {
 
   findAll() {
     this.service.findAll().subscribe(res => {
+      this.ELEMENT_DATA = res;
       this.dataSource = new MatTableDataSource<Tecnico>(res);
       this.dataSource.paginator = this.paginator;
     });
+  }
+
+  addTecnicoUpdate(id: any) {
+    const tecnico: Tecnico = this.ELEMENT_DATA
+      .find(tec => tec.id === id);
+    this.serviceData.setTecnico(tecnico);
   }
 }
