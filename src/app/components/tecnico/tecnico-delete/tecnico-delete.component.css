@@ -1,0 +1,51 @@
+.container {
+  max-width: 40rem;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: var(--gray-300);
+  border-radius: 6px;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form h1 {
+  width: 100%;
+  text-align: center;
+
+}
+
+.form img {
+  height: 6rem;
+  width: 100%;
+  margin: 5px auto;
+}
+
+.section {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 1rem;
+}
+
+.input-fields {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+}
+
+button:last-child {
+  margin-top: 1rem;
+}
+
+mat-icon {
+  opacity: .5;
+}

@@ -1,7 +1,8 @@
 .container {
-  max-width: 1000px;
+  max-width: 1400px;
   width: 100%;
   margin: 2rem auto;
+  border: 1rem solid transparent;
 }
 
 h1 {
@@ -29,4 +30,10 @@ h1 {
 
 .delete:hover {
   color: rgba(255, 0, 0, 0.8)
+}
+
+@media (max-width: 1250px) {
+  .container {
+    max-width: 900px;
+  }
 }

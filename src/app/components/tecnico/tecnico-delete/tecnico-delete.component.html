@@ -1,22 +1,43 @@
 <div class="container mat-elevation-z8">
   <form class="form">
-    <h1>Cadastrar técnico</h1>
+    <h1>Deletar técnico</h1>
     <img src="assets/img/tecnico-create.svg" alt="">
 
     <section class="section">
-      <mat-checkbox (click)="addPerfil(0)" name="admin" class="margin" color="primary">Admin</mat-checkbox>
-      <mat-checkbox (click)="addPerfil(2)" name="tecnico" class="margin" color="primary">Técnico</mat-checkbox>
-      <mat-checkbox (click)="addPerfil(1)" name="cliente" class="margin" color="primary">Cliente</mat-checkbox>
+      <mat-checkbox 
+        disabled="true"
+        [checked]="hasPerfil('ADMIN')" 
+        name="admin" 
+        class="margin" 
+        color="primary"
+      >Admin</mat-checkbox>
+      
+      <mat-checkbox 
+        disabled="true"
+        [checked]="hasPerfil('TECNICO')" 
+        name="tecnico" 
+        class="margin" 
+        color="primary"
+      >Técnico</mat-checkbox>
+      
+      <mat-checkbox 
+        disabled="true"
+        [checked]="hasPerfil('CLIENTE')" 
+        name="cliente" 
+        class="margin" 
+        color="primary"
+      >Cliente</mat-checkbox>
+      
     </section>
 
       <p>
         <mat-form-field class="input" appearance="fill">
           <mat-label>Nome</mat-label>
           <input 
-            [formControl]="nome"
+            disabled="true"
             [(ngModel)]="tecnico.nome"
             name="nome"
-            matInput 
+            matInput
             placeholder="Ex.. Fulano de tal"
             required
             maxlength="60"
@@ -29,7 +50,7 @@
         <mat-form-field class="input" appearance="fill">
           <mat-label>CPF</mat-label>
           <input 
-            [formControl]="cpf"
+            disabled="true"
             [(ngModel)]="tecnico.cpf"
             name="cpf"
             matInput 
@@ -45,7 +66,7 @@
         <mat-form-field class="input" appearance="fill">
           <mat-label>E-mail</mat-label>
           <input
-            [formControl]="email"
+            disabled="true"
             [(ngModel)]="tecnico.email"
             name="email" 
             matInput 
@@ -59,11 +80,11 @@
       <p>
         <mat-form-field class="input" appearance="fill">
           <mat-label>Senha</mat-label>
-          <input 
-            [formControl]="senha"
+          <input
+            disabled="true"
             [(ngModel)]="tecnico.senha"
             name="senha"
-            matInput 
+            matInput
             type="password"
             required
           >
@@ -71,7 +92,7 @@
         </mat-form-field>
       </p>
 
-      <button (click)="create()" mat-raised-button color="primary" [disabled]="!validFields()">Cadastrar</button>
+      <button (click)="delete()" mat-raised-button color="primary">Deletar</button>
       <button routerLink="/tecnicos" mat-flat-button color="accent">Cancelar</button>
   </form>
 </div>

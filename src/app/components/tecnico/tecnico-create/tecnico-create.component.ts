@@ -35,7 +35,6 @@ export class TecnicoCreateComponent {
   }
 
   create() {
-    this.tecnico.nome = this.nome.value;
     this.service.create(this.tecnico).subscribe(res => this.toastr.success('Técnico cadastrado com sucesso', 'Cadastro'));
   }
 

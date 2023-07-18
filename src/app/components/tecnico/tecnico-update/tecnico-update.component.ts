@@ -32,12 +32,12 @@ export class TecnicoUpdateComponent implements OnInit{
 
   ngOnInit(): void {
     const tecnicoData: Tecnico = this.dataService.getTecnico();
+    this.tecnico.id = tecnicoData.id;
     this.tecnico.nome = tecnicoData.nome;
     this.tecnico.cpf = tecnicoData.cpf;
     this.tecnico.email = tecnicoData.email;
     this.tecnico.senha = tecnicoData.senha;
     this.tecnico.perfis = tecnicoData.perfis;
-    console.log(this.tecnico)
   }
 
   validFields() {
@@ -46,8 +46,9 @@ export class TecnicoUpdateComponent implements OnInit{
   }
 
   update() {
-    this.tecnico.nome = this.nome.value;
-    this.service.create(this.tecnico).subscribe(res => this.toastr.success('Técnico cadastrado com sucesso', 'Cadastro'));
+    const tecnicoToSave:Tecnico = {...this.tecnico};
+    tecnicoToSave.perfis = this.transformPerfis(this.tecnico.perfis)
+    this.service.update(tecnicoToSave).subscribe(res => this.toastr.success('Atualizado com sucesso', 'Atualização'));
   }
 
   addPerfil(perfil: any) {
@@ -56,5 +57,19 @@ export class TecnicoUpdateComponent implements OnInit{
     } else {
       this.tecnico.perfis.splice(this.tecnico.perfis.indexOf(perfil), 1);
     }
+  }
+
+  hasPerfil(perfil: string): boolean {
+      return this.tecnico.perfis.includes(perfil);
+  }
+
+  transformPerfis(perfis: string[]){
+    const perfisObj = {
+      'ADMIN': 0,
+      'CLIENTE': 1,
+      'TECNICO': 2
+    }
+
+    return perfis.map(perfil => perfisObj[perfil]);
   }
 }
