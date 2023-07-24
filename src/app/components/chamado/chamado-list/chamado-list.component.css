@@ -1,0 +1,43 @@
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 2rem auto;
+  border: 1rem solid transparent;
+}
+
+h1 {
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.table-filter {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.edit {
+  color: var(--warn-color);
+  opacity: 0.8;
+}
+
+.edit:hover {
+  opacity: 10;
+}
+
+.delete {
+  color: rgba(255, 0, 0, 0.5)
+}
+
+.delete:hover {
+  color: rgba(255, 0, 0, 0.8)
+}
+
+.radio-chamados {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 1250px) {
+  .container {
+    max-width: 900px;
+  }
+}
