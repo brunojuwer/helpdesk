@@ -1,0 +1,76 @@
+<div class="container mat-elevation-z8">
+  <h1 class="full-width">Atualizar chamado</h1>
+  <img class="full-width" src="assets/img/chamado-create.svg" alt="Chamado image">
+
+  <form class="form">
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Leitura do chamado</mat-label>
+      <input 
+        disabled="true"
+        matInput 
+        placeholder="Ex. trocar bateria de notebook"
+      >
+    </mat-form-field>
+  
+    <div class="status-prioridade full-width">
+      <mat-form-field appearance="outline">
+        <mat-label>STATUS ({{ convertStatus(chamado.status) }})</mat-label>
+        <mat-select
+          name="status"
+          disabled="true"
+        >
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>PRIORIDADE ({{ convertPrioridade(chamado.prioridade) }})</mat-label>
+        <mat-select
+          disabled="true"
+          name="prioridade"
+        >
+          <mat-option value="0">BAIXA</mat-option>
+          <mat-option value="1">MÉDIA</mat-option>
+          <mat-option value="2">ALTA</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="tecnico">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>TECNICO ({{chamado.nomeTecnico}})</mat-label>
+        <mat-select
+          disabled="true" 
+        >
+          <mat-option>{{chamado.nomeTecnico}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="cliente">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>CHAMADO ({{chamado.nomeCliente}})</mat-label>
+        <mat-select
+          disabled="true"
+        >
+          <mat-option 
+          >{{chamado.nomeCliente}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>{{chamado.observacoes}}</mat-label>
+      <textarea
+        disabled="true"
+        matInput
+      ></textarea>
+    </mat-form-field>
+    <button 
+      class="full-width mat-elevation-z4" 
+      mat-stroked-button 
+      color="warn"
+      routerLink="/chamados"
+    >Retornar</button>
+  </form>
+</div>
+

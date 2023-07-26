@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Chamado } from 'src/app/models/chamado';
 import { ChamadosService } from 'src/app/services/chamados.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-chamado-list',
@@ -22,7 +23,8 @@ export class ChamadoListComponent implements OnInit {
   paginator: MatPaginator;
 
   constructor(
-    private service: ChamadosService
+    private service: ChamadosService,
+    private dataService: DataService
   ){}
 
   ngOnInit(): void {
@@ -76,7 +78,8 @@ export class ChamadoListComponent implements OnInit {
 
 
   addChamadoUpdate(id: number){
-
+    const chamado: Chamado = this.ELEMENT_DATA.find((item) => item.id === id );
+    this.dataService.setChamado(chamado);
   }
 
 

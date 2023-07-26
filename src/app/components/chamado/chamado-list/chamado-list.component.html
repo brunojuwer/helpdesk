@@ -60,10 +60,10 @@
     <ng-container matColumnDef="acoes">
       <th mat-header-cell *matHeaderCellDef> Ações </th>
       <td mat-cell *matCellDef="let element">
-        <a routerLink="" (click)="addChamadoUpdate(element.id)">
+        <a routerLink="/chamados/update" (click)="addChamadoUpdate(element.id)">
           <i class="material-icons edit">edit</i>
         </a>
-        <a routerLink="" (click)="addChamadoUpdate(element.id)">
+        <a routerLink="/chamados/read/{{element.id}}">
           <i class="material-icons delete">visibility</i>
         </a>
       </td>

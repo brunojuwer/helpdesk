@@ -20,6 +20,11 @@ export class ChamadosService {
       .pipe(catchError(err => this.errorHandler.handler(err)));
   }
 
+  findById(id: any): Observable<Chamado> {
+    return this.http.get<Chamado>(`${API_CONFIG.baseUrl}/chamados/${id}`)
+      .pipe(catchError(err => this.errorHandler.handler(err)));
+  }
+
   create(chamado: Chamado):Observable<Chamado> {
     return this.http.post<Chamado>(`${API_CONFIG.baseUrl}/chamados`, chamado)
       .pipe(catchError(err => this.errorHandler.handler(err)));
