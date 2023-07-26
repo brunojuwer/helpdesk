@@ -75,7 +75,7 @@ export class ChamadoListComponent implements OnInit {
   }
 
 
-  addclienteUpdate(id: number){
+  addChamadoUpdate(id: number){
 
   }
 
